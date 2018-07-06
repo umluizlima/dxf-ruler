@@ -9,6 +9,7 @@ flask = "*"
 dxf-ruler-generator = "*"
 flask-sslify = "*"
 gunicorn = "*"
+flask-cors = "*"
 
 [dev-packages]
 

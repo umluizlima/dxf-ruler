@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from flask_cors import CORS
 
 
 def create_app():
@@ -7,6 +8,7 @@ def create_app():
     app.config.from_mapping(
         SECRET_KEY=os.environ.get('SECRET_KEY') or 'you-will-never-guess'
     )
+    CORS(app)
 
     from flask_sslify import SSLify
     if 'DYNO' in os.environ:  # only trigger SSLify if app on Heroku
