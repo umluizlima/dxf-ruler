@@ -11,7 +11,7 @@ bp = Blueprint('api', __name__)
 def ruler(length):
     """Generate and send ruler of given length."""
     filename = os.path.basename(check_output(
-        f'dxf-ruler-generator {length}'
+        ['dxf-ruler-generator', f'{length}']
     ).decode('utf-8'))
     return send_file(
         os.path.abspath(filename),
